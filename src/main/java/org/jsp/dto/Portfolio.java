@@ -14,7 +14,6 @@ import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 @Entity
-@Data
 public class Portfolio {
 
 	@Id
@@ -34,4 +33,46 @@ public class Portfolio {
 
 	@OneToMany(mappedBy="portfolio")
 	private List<Security> securities;
+
+	public int getPortfolioID() {
+		return portfolioID;
+	}
+
+	public void setPortfolioID(int portfolioID) {
+		this.portfolioID = portfolioID;
+	}
+
+	public String getPortfolioType() {
+		return portfolioType;
+	}
+
+	public void setPortfolioType(String portfolioType) {
+		this.portfolioType = portfolioType;
+	}
+
+	public LocalDate getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDate creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Advisor getAdvisor() {
+		return advisor;
+	}
+
+	public void setAdvisor(Advisor advisor) {
+		this.advisor = advisor;
+	}
+
+	public List<Security> getSecurities() {
+		return securities;
+	}
+
+	public void setSecurities(List<Security> securities) {
+		this.securities = securities;
+	}
+	
+	
 }

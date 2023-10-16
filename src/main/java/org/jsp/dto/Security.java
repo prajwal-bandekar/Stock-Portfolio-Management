@@ -12,7 +12,6 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
 @Entity
-@Data
 public class Security {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +36,62 @@ public class Security {
 	@ManyToOne
 	@JoinColumn(name="PortfilioID")
 	private Portfolio portfolio;
+
+	public int getSecurityID() {
+		return securityID;
+	}
+
+	public void setSecurityID(int securityID) {
+		this.securityID = securityID;
+	}
+
+	public String getSecurityName() {
+		return securityName;
+	}
+
+	public void setSecurityName(String securityName) {
+		this.securityName = securityName;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public LocalDate getPurchaseDate() {
+		return purchaseDate;
+	}
+
+	public void setPurchaseDate(LocalDate purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
+
+	public int getPurchasePrice() {
+		return purchasePrice;
+	}
+
+	public void setPurchasePrice(int purchasePrice) {
+		this.purchasePrice = purchasePrice;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public Portfolio getPortfolio() {
+		return portfolio;
+	}
+
+	public void setPortfolio(Portfolio portfolio) {
+		this.portfolio = portfolio;
+	}
 	
 	
 }
