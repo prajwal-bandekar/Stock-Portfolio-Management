@@ -20,7 +20,7 @@ public class Portfolio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Portfolio-ID")
-	private int  portfolioID;
+	private int portfolioID;
 	
 	@Column(name="Portfolio-Domain", nullable=false)
 	private String portfolioType;

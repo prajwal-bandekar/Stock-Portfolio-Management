@@ -16,18 +16,18 @@ public class Advisor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="financialAdvisor-ID")
-	private long advisorID;
+	private int advisorID;
 	
-	@Column(name="Advisor-FirstName", nullable=false)
+	@Column(name="Advisor-FirstName")
 	 private String aFirstName;
 	
-	@Column(name="Advisor-LastName", nullable=false)
+	@Column(name="Advisor-LastName")
 	 private String aLastName;
 	
-	@Column(name="Email", nullable=false, unique=true)
+	@Column(name="Email", unique=true)
 	 private String aEmail;
 	
-	@Column(name="Phone", nullable=false, unique=true)
+	@Column(name="Phone", unique=true)
 	private long aPhone;
 	
 	@Column(name="Password", nullable=false)

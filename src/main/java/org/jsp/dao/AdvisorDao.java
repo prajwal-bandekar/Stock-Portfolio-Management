@@ -13,20 +13,20 @@ public class AdvisorDao {
 	@Autowired
 	private AdvisorRepository aRepo;
 	
-	public Advisor saveAdvisor(Advisor s) {
-		return aRepo.save(s);
+	public Advisor saveAdvisor(Advisor a) {
+		return aRepo.save(a);
 	}
 	
-	public Advisor updateAdvisor(Advisor s) {
-		return aRepo.save(s);
+	public Advisor updateAdvisor(Advisor a) {
+		return aRepo.save(a);
 	}
 	
-	public Optional<Advisor> findAdvisorById(int sID) {
-		return aRepo.findById(sID);
+	public Optional<Advisor> findAdvisorById(int advisorID) {
+		return aRepo.findById(advisorID);
 	}
 	
-	public void deleteAdvisor(int sID) {
-		aRepo.deleteById(sID);
+	public void deleteAdvisor(int advisorID) {
+		aRepo.deleteById(advisorID);
 	}
 	
 	//Add Methods for Verification

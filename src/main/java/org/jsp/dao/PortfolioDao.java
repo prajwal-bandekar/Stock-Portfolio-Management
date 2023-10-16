@@ -13,20 +13,20 @@ public class PortfolioDao {
 	@Autowired
 	private PortfolioRepository pRepo;
 	
-	public Portfolio savePortfolio(Portfolio s) {
-		return pRepo.save(s);
+	public Portfolio savePortfolio(Portfolio p) {
+		return pRepo.save(p);
 	}
 	
-	public Portfolio updatePortfolio(Portfolio s) {
-		return pRepo.save(s);
+	public Portfolio updatePortfolio(Portfolio p) {
+		return pRepo.save(p);
 	}
 	
-	public Optional<Portfolio> findPortfolioById(int sID) {
-		return pRepo.findById(sID);
+	public Optional<Portfolio> findPortfolioById(int portfolioID) {
+		return pRepo.findById(portfolioID);
 	}
 	
-	public void deletePortfolio(int sID) {
-		pRepo.deleteById(sID);
+	public void deletePortfolio(int portfolioID) {
+		pRepo.deleteById(portfolioID);
 	}
 	
 }

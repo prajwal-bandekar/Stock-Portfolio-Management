@@ -21,12 +21,12 @@ public class SecurityDao {
 		return sRepo.save(s);
 	}
 	
-	public Optional<Security> findSecurityById(int sID) {
-		return sRepo.findById(sID);
+	public Optional<Security> findSecurityById(int securityID) {
+		return sRepo.findById(securityID);
 	}
 	
-	public void deleteSecurity(int sID) {
-		sRepo.deleteById(sID);
+	public void deleteSecurity(int securityID) {
+		sRepo.deleteById(securityID);
 	}
 	
 }
