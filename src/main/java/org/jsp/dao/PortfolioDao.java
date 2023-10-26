@@ -25,8 +25,14 @@ public class PortfolioDao {
 		return pRepo.findById(portfolioID);
 	}
 	
-	public void deletePortfolio(int portfolioID) {
-		pRepo.deleteById(portfolioID);
+	public boolean deletePortfolio(int portfolioID) {
+		Optional<Portfolio> recPort = findPortfolioById(portfolioID);
+		if(recPort.isPresent()) {
+			pRepo.delete(recPort.get());
+			return true;
+		}
+		return false;
+		
 	}
 	
 }

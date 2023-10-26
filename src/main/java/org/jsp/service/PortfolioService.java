@@ -2,6 +2,7 @@ package org.jsp.service;
 
 import java.util.Optional;
 
+
 import org.jsp.dao.AdvisorDao;
 import org.jsp.dao.PortfolioDao;
 import org.jsp.dto.Advisor;
@@ -23,14 +24,14 @@ public class PortfolioService {
 		
 		//POST
 		public ResponseEntity<ResponseStructure<Portfolio>> savePortfolio(Portfolio p, int AdvisorID){
-			ResponseStructure<Portfolio> structure = new ResponseStructure<>();
 			Optional<Advisor> recAdvisor = aDao.findAdvisorById(AdvisorID);
+			ResponseStructure<Portfolio> structure = new ResponseStructure<>();
 			if(recAdvisor.isPresent()) {
 				
 				Advisor a = recAdvisor.get();
 				a.getPortfolios().add(p);
 				p.setAdvisor(recAdvisor.get());
-				aDao.updateAdvisor(a);
+				aDao.updateAdvisor(recAdvisor.get());
 				pDao.savePortfolio(p);
 				
 				structure.setData(p);
@@ -39,7 +40,7 @@ public class PortfolioService {
 				return new ResponseEntity<ResponseStructure<Portfolio>>(structure, HttpStatus.CREATED);
 			}
 //			Add Custom Exceptions later here, like Advisor not found kind
-			throw null; 
+			throw null;
 		}
 		
 		//PUT 
