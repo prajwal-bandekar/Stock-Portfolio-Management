@@ -2,6 +2,8 @@ package org.jsp.dto;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,6 +32,7 @@ public class Advisor {
 	private String aPassword;
 	
 	@OneToMany(mappedBy="advisor")
+//	@JsonIgnore
 	private List<Portfolio> portfolios;
 	
 //	getter setters

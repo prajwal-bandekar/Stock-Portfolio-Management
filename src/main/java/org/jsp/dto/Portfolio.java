@@ -1,5 +1,7 @@
 package org.jsp.dto;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -9,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Portfolio {
@@ -28,6 +31,10 @@ public class Portfolio {
 	@JoinColumn(name = "AdvisorID")
 	@JsonIgnore
 	private Advisor advisor;
+	
+	@OneToMany(mappedBy="portfolio")
+	@JsonIgnore
+	private List<Security> securities;
 
 //	getter setter
 	public int getPortfolioID() {
@@ -60,18 +67,13 @@ public class Portfolio {
 
 	public void setAdvisor(Advisor advisor) {
 		this.advisor = advisor;
+	}	
+
+	public List<Security> getSecurities() {
+		return securities;
 	}
 
-//	@OneToMany(mappedBy="portfolio")
-//	@JsonIgnore
-//	private List<Security> securities;
-
-//	getters and setters
-
-//	public List<Security> getSecurities() {
-//		return securities;
-//	}
-//
-//	public void setSecurities(List<Security> securities) {
-//		this.securities = securities;
+	public void setSecurities(List<Security> securities) {
+		this.securities = securities;
+	}
 }
