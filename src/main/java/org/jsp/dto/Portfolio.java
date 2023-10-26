@@ -1,4 +1,7 @@
 package org.jsp.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,19 +15,21 @@ public class Portfolio {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="Portfolio-ID")
+	@Column(name = "Portfolio-ID")
 	private int portfolioID;
-	
-	@Column(name="Portfolio-Domain", nullable=false)
+
+	@Column(name = "Portfolio-Domain", nullable = false)
 	private String portfolioType;
 
-	@Column(name="Portfolio-Created-on", nullable=false)
+	@Column(name = "Portfolio-Created-on", nullable = false)
 	private String creationDate;
-	
+
 	@ManyToOne
-	@JoinColumn(name="AdvisorID")
+	@JoinColumn(name = "AdvisorID")
+	@JsonIgnore
 	private Advisor advisor;
 
+//	getter setter
 	public int getPortfolioID() {
 		return portfolioID;
 	}
@@ -56,15 +61,12 @@ public class Portfolio {
 	public void setAdvisor(Advisor advisor) {
 		this.advisor = advisor;
 	}
-	
 
 //	@OneToMany(mappedBy="portfolio")
 //	@JsonIgnore
 //	private List<Security> securities;
 
-	
 //	getters and setters
-
 
 //	public List<Security> getSecurities() {
 //		return securities;
@@ -72,6 +74,4 @@ public class Portfolio {
 //
 //	public void setSecurities(List<Security> securities) {
 //		this.securities = securities;
-	}
-	
-	
+}
