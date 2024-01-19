@@ -8,6 +8,7 @@ const LoginEmail = () => {
 
 let [email,setEmail] = useState(null);
 let [password, setPassword] = useState(null);
+let data={email,password}
 
 const handleLogin=()=>
 {
