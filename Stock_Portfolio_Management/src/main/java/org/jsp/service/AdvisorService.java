@@ -74,9 +74,9 @@ public class AdvisorService {
 	} 
 	
 	//POST -  verify/Email
-	public ResponseEntity<ResponseStructure<Advisor>> verifyAdvisor(String aEmail, String aPassword){
+	public ResponseEntity<ResponseStructure<Advisor>> verifyAdvisor(String email, String password){
 		ResponseStructure<Advisor> structure = new ResponseStructure<>();
-		Optional<Advisor> recAdvisor = aDao.verifyAdvisor(aEmail, aPassword);
+		Optional<Advisor> recAdvisor = aDao.verifyAdvisor(email, password);
 		if(recAdvisor.isPresent()) {
 			structure.setData(recAdvisor.get());
 			structure.setMessage("Advisor verified successfully with Email and Password");
@@ -92,9 +92,9 @@ public class AdvisorService {
 	}
 	
 	//POST -  verify/Phone
-	public ResponseEntity<ResponseStructure<Advisor>> verifyAdvisor(long aPhone, String aPassword){
+	public ResponseEntity<ResponseStructure<Advisor>> verifyAdvisor(long phone, String password){
 		ResponseStructure<Advisor> structure = new ResponseStructure<>();
-		Optional<Advisor> recAdvisor = aDao.verifyAdvisor(aPassword, aPassword);
+		Optional<Advisor> recAdvisor = aDao.verifyAdvisor(phone, password);
 		if(recAdvisor.isPresent()) {
 			structure.setData(recAdvisor.get());
 			structure.setMessage("Advisor verified successfully with Phone and Password");

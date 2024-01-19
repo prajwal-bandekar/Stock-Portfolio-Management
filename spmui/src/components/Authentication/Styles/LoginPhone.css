@@ -1,0 +1,12 @@
+.box{
+    background-color: black;
+    color: #939393;
+    margin: 20px 50px;
+    padding: 30px;
+    border-radius: 16px;
+    }
+
+    #buttonLogin{
+        text-align: center;
+        margin-left: 99px;
+    }

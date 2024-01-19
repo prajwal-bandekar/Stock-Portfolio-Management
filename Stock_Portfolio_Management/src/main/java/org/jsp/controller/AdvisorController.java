@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,6 +40,16 @@ public class AdvisorController {
 	@DeleteMapping("/advisor/{advisorID}")
 	public ResponseEntity<ResponseStructure<String>> deleteAdvisor(@PathVariable int advisorID){
 		return service.deleteAdvisor(advisorID);
+	}
+	
+	@PostMapping("/advisor/login-via-email")
+	public ResponseEntity<ResponseStructure<Advisor>> verifyByEmail(@RequestParam String email, @RequestParam String password){
+		return service.verifyAdvisor(email, password);
+	}
+	
+	@PostMapping("/advisor/login-via-phone")
+	public ResponseEntity<ResponseStructure<Advisor>> verifyByPhone(@RequestParam long phone, @RequestParam String password){
+		return service.verifyAdvisor(phone, password);
 	}
 	
 	
