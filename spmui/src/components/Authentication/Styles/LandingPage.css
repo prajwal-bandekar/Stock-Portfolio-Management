@@ -14,7 +14,17 @@
 
 }
 
-Link{
+.link{
     text-decoration: none;
-    list-style: none;
+    color: black;
+    background-color: white;
+    height: 80px;
+    width: 300px;
+    font-size:larger;
+}
+
+.link:hover{
+    background-color: greenyellow;
+    font-weight: 800;
+    text-decoration: none;
 }

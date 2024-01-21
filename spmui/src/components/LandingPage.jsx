@@ -12,11 +12,11 @@ const LandingPage = () => {
         </h1>
         
 <br /> <br/>
-<Link to="/Signup"> Click here to Sign up for a new account</Link>
+<Link to="/Signup" className="link"> Click here to Sign up for a new account</Link>
 <br />
-<Link to="/Login-Via-Email">Click here to Log in Via Email</Link>
+<Link to="/Login-Via-Email" className="link">Click here to Log in Via Email</Link>
 <br />
-<Link to="/Login-Via-Phone">Click here to Log in Via Phone</Link>
+<Link to="/Login-Via-Phone" className="link">Click here to Log in Via Phone</Link>
 
         
       </div>
