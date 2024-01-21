@@ -14,9 +14,9 @@ function App() {
       <BrowserRouter>
           <Routes>
             <Route index element={<LandingPage/>} />
-            <Route path='Signup' element={<SignupForm/>} />
-            <Route path='Login-Via-Email' element={<LoginEmail/>} />
-            <Route path='Login-Via-Phone' element={<LoginPhone/>} />
+            <Route path='/Signup' element={<SignupForm/>} />
+            <Route path='/Login-Via-Email' element={<LoginEmail/>} />
+            <Route path='/Login-Via-Phone' element={<LoginPhone/>} />
           </Routes>
         </BrowserRouter>
     </div>
