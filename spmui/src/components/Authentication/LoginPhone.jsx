@@ -1,41 +1,69 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import './Styles/LoginEmail.css'
+import React, { useState } from "react";
+import axios from "axios";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./Styles/Login.css";
 
 const LoginPhone = () => {
+  let [phone, setPhone] = useState(null);
+  let [password, setPassword] = useState(null);
 
-    let [phone,setPhone] = useState(null);
-    let [password, setPassword] = useState(null);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    axios
+      .post(
+        `http://localhost:8080/advisor/login-via-phone?phone=${phone}&password=${password}`
+      )
+      .then(() => {
+        alert("User Logged in SucessFully");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Wrong Credentials entered");
+      });
+  };
 
   return (
     <>
-     <div className='mt-5 w-25 box'>
-     <Form>
+      <div id="box-parent">
+        <div id="box-child">
+          <Form id="form">
 
-      <Form.Group className="mb-3 font-weight-bold" controlId="formBasicName">
-        <Form.Label>Phone</Form.Label>
-        <Form.Control type="tel" placeholder="Enter your Phone number" pattern="[6-9]\d{9}" required value={phone} onChange={(e)=>setPhone(e.target.value)}/>
-      </Form.Group>
+            <label>Phone Number</label> 
+            <input
+              type="tel"
+              placeholder="Enter Phone number"
+              pattern="[6-9]\d{9}" required 
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <br />
 
-      <Form.Group className="mb-3 font-weight-bold" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"  value={password} onChange={(e)=>setPassword(e.target.value)}/>
-      </Form.Group>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br />
 
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Keep me Signed in" />
-      </Form.Group>
+            <label id="checkbox"><input type="checkbox" /> Keep me logged in </label>
+            <br />
 
-      <Button id="buttonLogin" variant="primary " type="submit" >
-        Sign in
-      </Button>
+            <Button type="submit" onClick={handleLogin}>
+              Sign in
+            </Button>
 
-
-    </Form>
-    </div>
+          </Form>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default LoginPhone
+export default LoginPhone;
+
+
+
+

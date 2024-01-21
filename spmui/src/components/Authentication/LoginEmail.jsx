@@ -1,48 +1,64 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import './Styles/LoginEmail.css'
-import axios from 'axios'
+import React, { useState } from "react";
+import axios from "axios";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import "./Styles/Login.css";
 
 const LoginEmail = () => {
+  let [email, setEmail] = useState(null);
+  let [password, setPassword] = useState(null);
 
-let [email,setEmail] = useState(null);
-let [password, setPassword] = useState(null);
-let data={email,password}
-
-const handleLogin=()=>
-{
-axios
-.post('http://localhost:8080/advisor/login-via-email')
-}
+  const handleLogin = (e) => {
+    e.preventDefault();
+    axios
+      .post(
+        `http://localhost:8080/advisor/login-via-email?email=${email}&password=${password}`
+      )
+      .then(() => {
+        alert("User Logged in SucessFully");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Wrong Credentials entered");
+      });
+  };
 
   return (
     <>
-    <div className='mt-5 w-25 box'>
-     <Form>
-        
-      <Form.Group className="mb-3 font-weight-bold" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" value={email}  onChange={(e)=>setEmail(e.target.value)}/>
-      </Form.Group>
+      <div id="box-parent">
+        <div id="box-child">
+          <Form id="form">
 
-      <Form.Group className="mb-3 font-weight-bold" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password"  value={password} onChange={(e)=>setPassword(e.target.value)}/>
-      </Form.Group>
+            <label>Email address</label> 
+            <input
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <br />
 
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Keep me Signed in" />
-      </Form.Group>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <br />
 
-      <Button id="buttonLogin" variant="primary " type="submit" onClick={handleLogin}>
-        Sign in
-      </Button>
+            <label id="checkbox"><input type="checkbox" /> Keep me logged in </label>
+            <br />
 
-    </Form>
-    </div>
+            <Button type="submit" onClick={handleLogin}>
+              Sign in
+            </Button>
+
+          </Form>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default LoginEmail
+export default LoginEmail;

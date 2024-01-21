@@ -1,14 +1,17 @@
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import LoginEmail from './components/Authentication/LoginEmail';
+// import LoginPhone from './components/Authentication/LoginPhone';
+import SignupForm from './components/Authentication/SignupForm';
 // import Signup from "./components/Authentication/Signup";
-import Login from './components/Authentication/Login';
 
 
 
 function App() {
   return (
     <div>
-      {/* <Signup/> */}
-      <Login/>
+      {/* <LoginPhone/> */}
+      <SignupForm/>
     </div>
   );
 }
