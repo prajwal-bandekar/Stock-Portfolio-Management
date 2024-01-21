@@ -34,14 +34,13 @@
 #box-child >Form > input {
     padding: 6px;
     border-radius: 4px;
-    width: 22rem;
+    width: 20rem;
     background-color: white;
     color: black; /* Add your label styling here */
     border: none;
 }
 
 #box-child> Form > label > #checkbox {
-    font-size: small;
     font-weight: 100
  }
 

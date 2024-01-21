@@ -36,13 +36,15 @@ function SignupForm() {
     <div id="box-parent">
       <div id="box-child">
         <Form>
+
           <label>Name</label>
           <input
             type="text"
             placeholder="Enter your Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-          /> <br/>
+          />
+          <br />
 
           <label>Email address</label>
           <input
@@ -50,7 +52,8 @@ function SignupForm() {
             placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-          /> <br/>
+          />
+          <br />
 
           <label>Phone</label>
           <input
@@ -60,7 +63,8 @@ function SignupForm() {
             required
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-          /> <br/>
+          />
+          <br />
 
           <label>Password</label>
           <input
@@ -68,21 +72,18 @@ function SignupForm() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          /> <br/>
-
+          />
+          <br />
 
           <label id="checkbox">
             <input type="checkbox" /> I have read and agree to the terms and
             services
-          </label> 
-
-          <Button
-            variant="primary"
-            type="submit"
-            onClick={handleSubmit}
-          >
+          </label>
+          
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
             Create Free Account
           </Button>
+
         </Form>
       </div>
     </div>
