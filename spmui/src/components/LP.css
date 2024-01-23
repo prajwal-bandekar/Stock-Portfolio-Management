@@ -1,11 +1,9 @@
-
+/* PAGE 1 */
 #nav{
-
     display: flex;
     justify-content:space-between;
     border-bottom: 1.2px white solid; 
 }
-
 
 #nav-left{
   padding-top:15px ;
@@ -40,7 +38,13 @@
     align-items: center;
 }
 
+#herosection> h1{
+    font-weight: 900;
+    font-size: 4.2rem;
+  }
+
 #herosection>h5{
+    font-weight: 300;
   color:#D1D5DB ;
 }
 
@@ -59,3 +63,94 @@
     color: white;
     background-color: #5e01f5;
 }
+
+/* PAGE 2 */
+#parentdiv2{
+  height: 60vh;
+  background-color: #111827;
+  color: #8B5CF6;
+}
+
+#header{
+  text-align: center;
+}
+
+#header h1{
+  padding-top: 40px;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+#header h5{
+ color: gray;
+}
+
+#tab{
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  text-align: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.h1tab{
+  font-size: 1.5rem;
+  color: white;
+}
+
+.h5tab{
+  font-size: 1rem;
+  color: grey;
+}
+
+.tabchild i{
+  padding: 45px 0;
+  font-size: 3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .parentdiv2{
+    height: 100vh;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+} */
