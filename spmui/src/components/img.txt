@@ -1,0 +1,28 @@
+<div id="tab">
+          <div className="tabchild">
+         
+            {/* <i class="fa-regular fa-circle-user fa-2xl"></i> */}
+            <img id="erlich" src="https://avatars.githubusercontent.com/u/8151169?v=4" alt="Real Jian Yang" />
+            <h1 className="h1tab">Erlich Bachman </h1>
+            <h5 className="h5tab">"InvestMitra, the ultimate game changer for managing  <br/>
+            my stock portfolio, delivers real-time updates and custom alerts – hands down, <br/>
+            the best damn portfolio tracker  I've ever used. I've got skin in the tech game, <br/>
+            owning a solid 10% of Pied Piper. And let's not forget, I have made strategic <br/>
+            moves like selling Aviato in the end. Highly recommend it because missing a <br/>
+            market move is so last season!"</h5></div>
+
+          <div className="tabchild">
+            
+            {/* <i class="fa-solid fa-users-viewfinder  fa-2xl"></i> */}
+            <img id="russhanneman" src="https://i.ytimg.com/vi/0oV4IVy8tvE/maxresdefault.jpg" alt="" />
+            <h1 className="h1tab">Dinesh Chugtai and Co. Ltd</h1>
+            <h5 className="h5tab">A game changer for my investment strategy. <br/>Love the real-time updates."</h5></div>
+
+
+          <div className="tabchild">
+            
+            <i class="fa-solid fa-users  fa-2xl"></i>
+            <h1 className="h1tab">InvestiLab Pvt Ltd</h1>
+            <h5 className="h5tab">"The custom alerts feature is amazing.<br/> I never miss a market move now."</h5></div>
+        </div>
+      </div>

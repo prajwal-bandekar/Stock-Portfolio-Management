@@ -15,13 +15,21 @@
     display: flex;
     justify-content: space-evenly;
     padding-top: 8px;
+  
 }
 
 #nav-right> h4{
-   
-    height: 100%;
-    padding: 10px 35px;
+    height: 90%;
+    padding: 10px 25px;
     font-size: large;
+    transition: 0.4s;
+    margin: 0px 5px;
+    border-radius: 8px;
+}
+
+#nav-right h4:hover{ 
+background-color: #1c2b4b;
+color: #9e75fd;
 }
 
 #parentdiv{
@@ -31,17 +39,33 @@
 }
 
 #herosection{
+  margin-top: 30px;
     height: 33rem;
     display: flex;
+    text-align: center;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#herosection> h1{
-    font-weight: 900;
+#herosection h1{
+    /* font-weight: 700; */
     font-size: 4.2rem;
+    /* font-family: 'Libre Barcode 128 Text', system-ui; */
+    font-family: 'Kalnia', serif;
+    font-weight: 400;
   }
+
+#h2Invest{
+  text-transform: uppercase;
+  font-size: 8.2rem;
+  font-weight: 900;
+  margin-top: -30px;
+  color: #daccfc;
+  text-shadow: 9px 10px 0.5px #5e01f5;
+}
+
+
 
 #herosection>h5{
     font-weight: 300;
@@ -66,7 +90,7 @@
 
 /* PAGE 2 */
 #parentdiv2{
-  height: 60vh;
+  height: 80vh;
   background-color: #111827;
   color: #8B5CF6;
 }
@@ -79,10 +103,23 @@
   padding-top: 40px;
   font-weight: 700;
   font-size: 3.2rem;
+  padding-bottom: 15px;
+
+  
 }
+
+#KeySpan{
+  font-family: 'Kalnia', serif;
+}
+
+#FeaturesSpan{
+font-weight: 700;
+}
+
 
 #header h5{
  color: gray;
+ padding-bottom: 40px;
 }
 
 #tab{
@@ -111,46 +148,144 @@
 }
 
 
+/* PAGE 3 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .parentdiv2{
-    height: 100vh;
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
+#parentdiv3{
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #8B5CF6;
 }
 
-.header{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#tab-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.tab{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-} */
+#header{
+  margin-bottom: 25px
+}
+
+.tabs{
+border: 2px solid white;
+/* border-style: dashed; */
+height:24rem ;
+width: 27rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: -10px;
+
+
+ p{
+font-size: 0.98rem;
+margin-top: -10px;
+padding: 10px;
+ }
+
+ h1{
+  font-size: 2rem;
+  color: white;
+  margin-top: 20px;
+  /* text-shadow: 2px 2px 5px gray; */
+ }
+
+}
+
+.tabs img{
+ height: 11rem;
+ width: 11rem;
+ border-radius: 50%;
+ margin-top: -20px;
+ /* padding: 8px; */
+ border: 8px solid rgb(255, 255, 255);
+ 
+}
+
+
+
+
+/* ALL IMAGE MODIFICATIONS */
+
+#erlich{
+  height: 150px;
+  width: 150px;
+}
+
+#russhanneman{
+  height: 200px;
+  /* width: 200px; */
+}
+
+/* PAGE 4 */
+#footer{
+  height: 45vh;
+  background-color: #111827;
+  color: #8B5CF6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 150%;
+  /* font-size: large; */
+}
+
+.newsletter input {
+  margin-top: 10px;
+  margin-right: 2.5px;
+  height: 35px;
+  width: 300px;
+  border-radius: 8px;
+  padding: 0 8px;
+ border: none;
+}
+
+#newsbutton{
+  height:35px;
+  width: 120px;
+  border: none;
+  border-radius: 8px;
+  background-color: #8B5CF6;
+  transition: 0.45s;
+  font-weight: bold;
+}
+
+#newsbutton:hover{
+  font-weight: bolder;
+  color: white;
+  background-color: #5e01f5;
+}
+
+.socials{
+  width: 30rem;
+}
+
+#findushere{
+  font-family: 'Kalnia', serif;
+  font-weight: 900;
+}
+
+#socialLink{
+  font-size: large;
+  font-weight: 400;
+  color: white;
+}
+
+#socialLink a{
+  /* text-decoration:none; */
+  color: white;
+  padding-right: 35px;
+}
+
+#address{
+  font-family: 'Kalnia', serif;
+  font-weight: 900;
+}
+
+#addressLink{
+  font-size: medium;
+  font-weight: 300;
+  color: white;
+}
