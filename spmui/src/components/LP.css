@@ -33,7 +33,7 @@ color: #9e75fd;
 }
 
 #parentdiv{
-    height: 100vh;
+    height: 110vh;
     background-color: black;
     color:#D1D5DB;
 }
@@ -158,13 +158,19 @@ font-weight: 700;
 }
 
 #tab-container{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 #header{
-  margin-bottom: 25px
+  margin-bottom: 70px;
+ margin-top: -1rem;
+
+ h5{
+  margin-top: -1rem;
+ }
 }
 
 .tabs{
@@ -178,30 +184,41 @@ justify-content: center;
 align-items: center;
 text-align: center;
 padding: -10px;
+border-radius: 12px;
 
 
  p{
+color: #808070;
 font-size: 0.98rem;
-margin-top: -10px;
+margin-top: -20px;
 padding: 10px;
  }
 
  h1{
+  z-index: 999;
   font-size: 2rem;
-  color: white;
-  margin-top: 20px;
+  color: #8B5CF6;
+  margin-top: 7.5rem;
   /* text-shadow: 2px 2px 5px gray; */
+ }
+
+ h6{
+  color: rgb(209, 209, 209);
  }
 
 }
 
 .tabs img{
+  position: absolute;
+top: -20%;
+
  height: 11rem;
  width: 11rem;
  border-radius: 50%;
- margin-top: -20px;
+ /* margin-top: -20px; */
  /* padding: 8px; */
- border: 8px solid rgb(255, 255, 255);
+ border: 8px solid #ffffff;
+
  
 }
 
@@ -221,8 +238,9 @@ padding: 10px;
 }
 
 /* PAGE 4 */
+
 #footer{
-  height: 45vh;
+  height: 65vh;
   background-color: #111827;
   color: #8B5CF6;
   display: flex;
@@ -238,8 +256,12 @@ padding: 10px;
   height: 35px;
   width: 300px;
   border-radius: 8px;
-  padding: 0 8px;
+  padding: 0 12px;
  border: none;
+}
+
+.newsletter{
+  font-size: large;
 }
 
 #newsbutton{
