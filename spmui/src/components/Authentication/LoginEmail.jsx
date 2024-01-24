@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Styles/Login.css";
 
@@ -48,11 +47,11 @@ const LoginEmail = () => {
             <br />
 
             <label id="checkbox"><input type="checkbox" /> Keep me logged in </label>
-            <br />
+  
 
-            <Button type="submit" onClick={handleLogin}>
-              Sign in
-            </Button>
+            <button type="submit" id="loginbutton" onClick={handleLogin}>
+              Log in
+            </button>
 
           </Form>
         </div>

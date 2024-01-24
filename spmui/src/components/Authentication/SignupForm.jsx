@@ -1,8 +1,8 @@
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./Styles/Signup.css";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function SignupForm() {
   let [name, setName] = useState(null);
@@ -80,10 +80,15 @@ function SignupForm() {
             services
           </label>
           
-          <Button variant="primary" type="submit" onClick={handleSubmit}>
+          <button id="signupbutton" onClick={handleSubmit}>
             Create Free Account
-          </Button>
+          </button>  <br/>
 
+            <p>or</p>
+            <Link to="/login-via-email"><button id="loginbutton">
+            Login
+          </button></Link>
+          
         </Form>
       </div>
     </div>

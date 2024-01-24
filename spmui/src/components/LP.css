@@ -17,19 +17,23 @@
     padding-top: 8px;
   
 }
+.linkNavBar{
+text-decoration: none;
+}
 
 #nav-right> h4{
     height: 90%;
     padding: 10px 25px;
     font-size: large;
-    transition: 0.4s;
+    transition: 0.8s;
     margin: 0px 5px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 #nav-right h4:hover{ 
-background-color: #1c2b4b;
-color: #9e75fd;
+  text-decoration: none;
+background-color: #5E01F5;
+color: #ffffff;
 }
 
 #parentdiv{
@@ -65,8 +69,6 @@ color: #9e75fd;
   text-shadow: 9px 10px 0.5px #5e01f5;
 }
 
-
-
 #herosection>h5{
     font-weight: 300;
   color:#D1D5DB ;
@@ -80,6 +82,13 @@ color: #9e75fd;
     background-color: #8B5CF6;
     transition: 0.45s;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.buttonGrid{
+display: flex;
+flex-direction: row;
+padding: 0px 5px;
 }
 
 #button:hover{
@@ -87,6 +96,15 @@ color: #9e75fd;
     color: white;
     background-color: #5e01f5;
 }
+
+.LinkButton{
+  text-decoration: none;
+}
+.LinkButton:hover{
+  text-decoration: none;
+}
+
+
 
 /* PAGE 2 */
 #parentdiv2{
@@ -104,8 +122,6 @@ color: #9e75fd;
   font-weight: 700;
   font-size: 3.2rem;
   padding-bottom: 15px;
-
-  
 }
 
 #KeySpan{
@@ -119,7 +135,7 @@ font-weight: 700;
 
 #header h5{
  color: gray;
- padding-bottom: 40px;
+ padding-bottom: 20px;
 }
 
 #tab{

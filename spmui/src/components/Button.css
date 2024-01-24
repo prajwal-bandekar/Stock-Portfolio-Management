@@ -2,8 +2,8 @@
 /* CSS */
 .button-86 {
   all: unset;
-  width: 100px;
-  height: 30px;
+  width: 80px;
+  height: 27px;
   font-size: 16px;
   background: transparent;
   border: none;
@@ -43,7 +43,7 @@
   transform: translate(10px, 10px);
   width: 35px;
   height: 35px;
-  background: #0000009f;
+  background: #0f0f0f98;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;

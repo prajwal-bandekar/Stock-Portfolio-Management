@@ -42,7 +42,24 @@ border-radius: 12px;
     border: none;
 }
 
-#box-child #form > label > #checkbox {
-   font-size: small;
-   font-weight: 100
+#checkbox{
+    font-weight: 400;
+    font-size: small;
 }
+
+#loginbutton{
+    height: 45px;
+    width: 12rem;
+    background-color: #5e01f5;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    transition: 0.45s;
+ }
+
+ #loginbutton:hover{
+    scale: 1.050;
+    border-radius: 8px;
+    border: none;
+    font-weight: 900;
+ }

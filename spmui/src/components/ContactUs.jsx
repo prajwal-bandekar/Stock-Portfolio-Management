@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div>In Progress Mate, setting up a Company takes time</div>
   )
 }
 
