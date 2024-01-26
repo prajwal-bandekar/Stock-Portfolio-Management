@@ -20,6 +20,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    {/* <ul id="border-bottom"></ul> */}
     </>
   );
 };

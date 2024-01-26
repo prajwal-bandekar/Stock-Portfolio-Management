@@ -9,6 +9,7 @@ import SignupForm from "./components/Authentication/SignupForm.jsx";
 import LoginEmail from "./components/Authentication/LoginEmail";
 import LoginPhone from "./components/Authentication/LoginPhone";
 import Dashboard from "./components/Dashboard/Dashboard";
+// import News from "./components/Dashboard/News";
 
 function App() {
   return (
@@ -22,12 +23,13 @@ function App() {
           <Route path="/login-via-phone" element={<LoginPhone />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/dashboard" element={<Dashboard/>} />
         </Routes>
       </BrowserRouter>
 
       {/* Tesing LP here */}
       {/* <LP /> */}
-
+      {/* <News/> */}
       {/* <Dashboard/> */}
     </div>
   );

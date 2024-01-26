@@ -1,0 +1,72 @@
+
+#dash-main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 91.7vh;
+    width: 100%;
+    background-color: black;
+    /* padding: 5px; */
+}
+
+#dash-left{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    height: 96%;
+    width: 25%;
+    background-color: black;
+    color: white;
+    /* margin-right:13px ; */
+    margin-top: 20px;
+}
+
+#h1left{
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+#h6left{
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #D1D5DB;
+}
+
+#dash-left input{
+background-color: #1F2937;
+padding: 5px 20px;
+border-radius: 6px;
+height: 48px;
+width: 18rem;
+border: none;
+font-weight:500;
+}
+
+#dash-button{
+    height: 40px;
+    width: 12rem;
+    border: none;
+    border-radius: 6px;
+    background-color:#8B5CF6 ;
+    color: white;
+}
+
+/* WORK ON THIS LATER
+#dash-left input:focus {
+    border-color: #ff0000 !important;
+  } */
+
+#dash-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95%;
+    width: 75%;
+    border-radius: 16px;
+    background-color: #111827;
+    color: white;
+    margin-right: 16px;
+}
+
