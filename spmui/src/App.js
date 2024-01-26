@@ -8,6 +8,7 @@ import ContactUs from "./components/ContactUs";
 import SignupForm from "./components/Authentication/SignupForm.jsx";
 import LoginEmail from "./components/Authentication/LoginEmail";
 import LoginPhone from "./components/Authentication/LoginPhone";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
 
       {/* Tesing LP here */}
       {/* <LP /> */}
+
+      {/* <Dashboard/> */}
     </div>
   );
 }

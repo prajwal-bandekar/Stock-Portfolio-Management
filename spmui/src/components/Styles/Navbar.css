@@ -1,0 +1,42 @@
+#nav{
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1.2px white solid; 
+}
+
+#nav-left{
+  padding-top:15px ;
+  padding-left: 25px;
+  
+}
+
+#nav-right{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 8px;
+  
+}
+.linkNavBar{
+text-decoration: none;
+}
+
+#nav-right> h4{
+    height: 90%;
+    padding: 10px 25px;
+    font-size: large;
+    transition: 0.8s;
+    margin: 0px 5px;
+    border-radius: 6px;
+}
+
+#nav-right h4:hover{ 
+  text-decoration: none;
+background-color: #5E01F5;
+color: #ffffff;
+}
+
+/* #parentdiv{
+    height: 110vh;
+    background-color: black;
+    color:#D1D5DB;
+} */

@@ -1,8 +1,10 @@
 import React from "react";
-import "./LP.css";
-import "./Button.css";
-import "./Button2.css";
+import "./Styles/LP.css";
+import "./Styles/Button.css";
+import "./Styles/Button2.css";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const LP = () => {
 
@@ -10,20 +12,7 @@ const LP = () => {
     <>
       {/* PAGE 1 */}
       <div id="parentdiv">
-        <div id="nav">
-          <div id="nav-left">
-            <h4>*Logo* InvestMitra</h4>
-          </div>
-
-          <div id="nav-right">
-            <h4 className="linkNavBar">Home</h4>
-            <h4 className="linkNavBar">About</h4>
-            <h4 className="linkNavBar">Contact Us</h4>
-            {/* <h4 className="linkNavBar"> <Link to="/home">Home</Link></h4>
-            <h4 className="linkNavBar"><Link to="/about">About us</Link></h4>
-            <h4 className="linkNavBar"><Link to="/contact-us">Contact Us</Link></h4> */}
-          </div>
-        </div>
+        <Navbar/>
 
         <div id="herosection">
           <h1>Track Your </h1>
@@ -158,50 +147,7 @@ const LP = () => {
       </div>
 
       {/* Page 4 */}
-      <div id="footer">
-        <div className="newsletter">
-          Sign up for our News letter to keep <br />
-          up-to-date with the latest trends in the market. <br />
-          {/* Add SendGrID API Here */}
-          <input
-            type="email"
-            placeholder="Sign up using your email here"
-          />
-          <button class="button-54">
-            Submit
-          </button>
-          {/* <button id="newsbutton">Submit</button> */}
-        </div>
-
-        <div className="socials">
-          <h3 id="findushere">Find us here </h3>
-          <div id="socialLink">
-            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
-              FaceBook
-            </a>
-            <a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
-              Twitter
-            </a>
-            <a href="https://in.linkedin.com/" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-          </div>
-
-          <br />
-          <h4 id="address">
-            Address <br />
-          </h4>
-          <h6 id="addressLink">
-            03/11, Developer Brain Avenue, <br />
-            BTM 2'nd Stage, <br />
-            Bengaluru, Karnataka, <br />
-            India - 560076 <br />
-          </h6>
-        </div>
-      </div>
+  <Footer/>
     </>
   );
 };
