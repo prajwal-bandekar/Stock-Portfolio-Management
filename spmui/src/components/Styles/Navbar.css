@@ -24,8 +24,9 @@
     padding-top: 8px;
   
 }
-.linkNavBar{
+.linkNavBar a{
 text-decoration: none;
+color: white;
 }
 
 #nav-right> h4{
