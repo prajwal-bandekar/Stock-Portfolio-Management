@@ -1,25 +1,45 @@
-// import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import "../Styles/NewsItem.css";
 
-// const NewsItem = (props) => {
+const NewsItem = () => {
+  const api_key = process.env.REACT_APP_API_KEY;
 
-//  let{title,description} = props;
+  let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&pageSize=9&apiKey=${api_key}`;
+  const [data, setData] = useState([]);
 
-//   return (
-//     <>
-//     <div className="card" style={{width: "18rem"}}>
-//         <img className="card-img-top" src="..." alt="Card image cap" /> 
-//         <div className="card-body">
-//           <h5 className="card-title">{title}</h5>
-//           <p className="card-text">
-//            {description}
-//           </p>
-//           <a href="#" className="btn btn-primary">
-//             Go somewhere
-//           </a>
-//         </div>
-//       </div>
-//     </>
-//   )
-// }
+  useEffect(() => {
+    axios
+      .get(url)
+      .then((res) => {
+        setData(res.data.articles);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-// export default NewsItem
+  return (
+    <div className="main">
+        <h1>Latest News</h1>
+        <h6 id='h6'>Here are the latest news related to stocks and business.</h6>
+      <div className="container">
+        
+        {data.map((item, index) => (
+          <div className="card" key={index}>
+            <img src={item.urlToImage} alt="Image Not Found" />
+            <br />
+            <h5>{item.title}</h5>
+            <p>{item.description}</p>
+            <p>
+              <a href={item.url} target="_">Read More</a>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default NewsItem;
