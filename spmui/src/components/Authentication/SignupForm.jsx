@@ -3,6 +3,8 @@ import "./Styles/Signup.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 
 function SignupForm() {
   let [name, setName] = useState(null);
@@ -33,7 +35,10 @@ function SignupForm() {
   };
 
   return (
+    <>
+    <Navbar />
     <div id="box-parent">
+
       <div id="box-child">
         <Form>
 
@@ -92,6 +97,9 @@ function SignupForm() {
         </Form>
       </div>
     </div>
+    <Footer/>
+    </>
+    
   );
 }
 

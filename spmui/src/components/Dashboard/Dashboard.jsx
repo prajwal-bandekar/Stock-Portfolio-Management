@@ -1,25 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar";
 import "../Styles/Dashboard.css";
 const Dashboard = () => {
+
+const [nos,setNos] = useState();
+const [category, setCategory] = useState();
+const[cmp, setCmp] = useState();
+const[total, setTotal] = useState();
+
+
   return (
     <>
       <Navbar />
-
       <div id="dash-main">
-
-        <div id="dash-left">
-          <h1 id="h1left">Dashboard</h1>
-          <h6 id="h6left">Manage your stocks here</h6>
-          <br />
-          <input type="text" placeholder="Add your stocks" />
-          <br />
-          <button id="dash-button">Add stock</button>
-        </div>
-
         <div id="dash-right">
-          <h1>Your stocks</h1>
+          <h1>Your Stocks</h1>
           <h6>Here are the stocks your are currently tracking</h6>
+          <div className="add-div">
+            <span>
+              <i class="fa-solid fa-magnifying-glass"></i>{" "}
+              <input id="i1"  type="text" placeholder="Select your Stock" />
+            </span>
+
+            <span>
+            <i class="fa-solid fa-hashtag"></i>
+            <input id="i2" value={nos} type="number" placeholder="No. of Stocks" onChange={(e)=>{setNos(e.target.value)}} />
+            </span>
+            
+            <span>
+            <i class="fa-solid fa-list"></i>
+            <input id="i3" value={category} type="text" placeholder="Category" onChange={(e)=>{setCategory(e.target.value.toUpperCase())}} />
+            </span>
+
+            <span>
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <input id="i4" value={cmp} type="number" placeholder="Current Market Price" onChange={(e)=>{setCmp(e.target.value)}} />
+            </span>
+            
+            <span>
+            <i class="fa-solid fa-money-bill"></i>
+            <input id="i5" value={total} type="number" placeholder="Total Invested" onChange={(e)=>{setTotal(e.target.value)}} />
+            </span>
+            
+            <button id="addbtn">Add</button>
+          </div>
         </div>
       </div>
     </>

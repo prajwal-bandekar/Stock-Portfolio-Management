@@ -6,67 +6,80 @@
     height: 91.7vh;
     width: 100%;
     background-color: black;
-    /* padding: 5px; */
+    
 }
 
-#dash-left{
+#dash-right{
     display: flex;
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
-    height: 96%;
-    width: 25%;
-    background-color: black;
-    color: white;
-    /* margin-right:13px ; */
-    margin-top: 20px;
-}
-
-#h1left{
-    font-size: 3.5rem;
-    font-weight: 900;
-}
-
-#h6left{
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: #D1D5DB;
-}
-
-#dash-left input{
-background-color: #1F2937;
-padding: 5px 20px;
-border-radius: 6px;
-height: 48px;
-width: 18rem;
-border: none;
-font-weight:500;
-}
-
-#dash-button{
-    height: 40px;
-    width: 12rem;
-    border: none;
-    border-radius: 6px;
-    background-color:#8B5CF6 ;
-    color: white;
-}
-
-/* WORK ON THIS LATER
-#dash-left input:focus {
-    border-color: #ff0000 !important;
-  } */
-
-#dash-right{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     height: 95%;
-    width: 75%;
+    width: 98%;
     border-radius: 16px;
     background-color: #111827;
     color: white;
-    margin-right: 16px;
+   
+
+    h1{
+        padding-top: 5px;
+        color: #8B5CF6;
+        font-weight: 900;
+        font-size: 3.5rem;
+    }
+    h6{
+        color: #9298A4;
+        font-weight: 400;
+        font-size: 1rem;
+    }
 }
 
+
+.add-div{
+    margin-top: 10px;
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+
+    i{
+        padding-right: 6px;
+    }
+
+    input{
+        background-color: black;
+        color: rgb(167, 167, 167);
+        border: none;
+        padding-left: 12px;
+        
+        height: 45px;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    #i1{
+        width: 20rem;
+    }
+
+    #i2{
+        width: 9rem;
+    }
+
+    #i3{
+        width: 10rem;
+    }
+
+    #i4{
+        width: 11rem;
+    }
+
+    #addbtn{
+        width: 5rem;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        background-color: #22C55E;
+        font-weight: 500;
+    }
+
+}

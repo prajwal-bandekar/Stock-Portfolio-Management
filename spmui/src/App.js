@@ -9,7 +9,6 @@ import SignupForm from "./components/Authentication/SignupForm.jsx";
 import LoginEmail from "./components/Authentication/LoginEmail";
 import LoginPhone from "./components/Authentication/LoginPhone";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Footer from "./components/Footer";
 import News from "./components/Dashboard/News";
 // import News from "./components/Dashboard/News";
 
@@ -24,7 +23,6 @@ function App() {
           <Route path="/login-via-email" element={<LoginEmail />} />
           <Route path="/login-via-phone" element={<LoginPhone />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact-us" element={<Footer/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/news" element={<News/>} />
         </Routes>

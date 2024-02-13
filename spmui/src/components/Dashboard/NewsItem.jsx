@@ -54,14 +54,14 @@ const NewsItem = () => {
         ))}
       </div>
 <br />
-      <div className="button-navigate">
+      {/* <div className="button-navigate">
         <button onClick={handlePrevios}>
           <i class="fa-solid fa-arrow-left"></i>
         </button>
         <button onClick={handleNext}>
           <i class="fa-solid fa-arrow-right"></i>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     line-height: 150%;
+    border-top: 1px solid white;
     /* font-size: large; */
   }
   
