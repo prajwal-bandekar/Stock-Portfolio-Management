@@ -1,0 +1,21 @@
+.mid{
+    background-color: black;
+
+    h1{
+        color: #8B5CF6;
+        text-align: center;
+    }
+
+    h3{
+        text-align: center;
+        color: white;
+    }
+}
+
+.mid-padding{
+    padding: 0 15px;
+}
+
+#h4color{
+    color: #757575;
+}

@@ -22,12 +22,6 @@ public class SecurityService {
 	@Autowired
 	private PortfolioDao pDao;
 	
-//	@Autowired
-//	private AdvisorDao aDao;
-	
-//	@Autowired
-//	private AdvisorDao aDao;
-	
 	//POST
 	public ResponseEntity<ResponseStructure<Security>> saveSecurity(Security s, int portfolioID){
 		ResponseStructure<Security> structure = new ResponseStructure<>();

@@ -5,22 +5,9 @@ import "../Styles/NewsItem.css";
 const NewsItem = () => {
   const api_key = process.env.REACT_APP_API_KEY;
 
-  const [page, setPage] = useState(1);
-
   let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&pageSize=9&apiKey=${api_key}`;
   // let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&pageSize=9&apiKey=${api_key}`;
   const [data, setData] = useState([]);
-
-
-
-  const handlePrevios=()=>{
-
-  }
-
-  const handleNext=()=>{
-    
-  console.log(this.state.page)
-  }
 
   useEffect(() => {
     axios
@@ -44,7 +31,11 @@ const NewsItem = () => {
             <img src={item.urlToImage} alt="Image Not Found" />
             <br />
             <h5>{item.title}</h5>
-            <p>{item.description.substring(0, 150)}...</p>
+            {item.description ? (
+              <p>{item.description.substring(0, 150)}...</p>
+            ) : (
+              <p>No description available</p>
+            )}
             <p>
               <a href={item.url} target="_">
                 Read More <i class="fa-solid fa-circle-chevron-right"></i>
@@ -53,15 +44,7 @@ const NewsItem = () => {
           </div>
         ))}
       </div>
-<br />
-      {/* <div className="button-navigate">
-        <button onClick={handlePrevios}>
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <button onClick={handleNext}>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div> */}
+      <br />
     </div>
   );
 };
