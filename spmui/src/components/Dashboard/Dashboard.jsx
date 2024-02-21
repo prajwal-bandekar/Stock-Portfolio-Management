@@ -14,31 +14,31 @@ const[total, setTotal] = useState();
       <Navbar />
       <div id="dash-main">
         <div id="dash-right">
-          <h1>Your Stocks</h1>
+          <h1 id="ys-h1">Your Stocks</h1>
           <h6>Here are the stocks your are currently tracking</h6>
           <div className="add-div">
             <span>
-              <i class="fa-solid fa-magnifying-glass"></i>{" "}
+              <i class="fa-solid fa-magnifying-glass" id="icon-hover"></i>{" "}
               <input id="i1"  type="text" placeholder="Select your Stock" />
             </span>
 
             <span>
-            <i class="fa-solid fa-hashtag"></i>
+            <i class="fa-solid fa-hashtag" id="icon-hover"></i>
             <input id="i2" value={nos} type="number" placeholder="No. of Stocks" onChange={(e)=>{setNos(e.target.value)}} />
             </span>
             
             <span>
-            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-list" id="icon-hover"></i>
             <input id="i3" value={category} type="text" placeholder="Category" onChange={(e)=>{setCategory(e.target.value.toUpperCase())}} />
             </span>
 
             <span>
-            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <i class="fa-solid fa-indian-rupee-sign" id="icon-hover"></i>
             <input id="i4" value={cmp} type="number" placeholder="Current Market Price" onChange={(e)=>{setCmp(e.target.value)}} />
             </span>
             
             <span>
-            <i class="fa-solid fa-money-bill"></i>
+            <i class="fa-solid fa-money-bill" id="icon-hover"></i>
             <input id="i5" value={total} type="number" placeholder="Total Invested" onChange={(e)=>{setTotal(e.target.value)}} />
             </span>
             
