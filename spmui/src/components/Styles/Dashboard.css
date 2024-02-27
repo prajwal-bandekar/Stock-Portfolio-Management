@@ -1,3 +1,26 @@
+.dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 0 0 8px 8px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    width: 20rem; /* Set dropdown width to match input box */
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transition background and color */
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0;
+    color: #000; /* Set text color to black on hover */
+  }
+
 
 #dash-main{
     display: flex;
@@ -9,16 +32,17 @@
     
 }
 
-#dash-right{
+#dash-right {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     height: 95%;
-    width: 98%;
+    width: 100%; /* Take up full width */
     border-radius: 16px;
     background-color: #111827;
     color: white;
+    overflow: auto; /* Add overflow property to handle content overflow */
+
 
 #ys-h1{
     transition: 0.6s;
