@@ -1,3 +1,152 @@
+import React, { useState } from "react";
+import Navbar from "../Navbar";
+import "../Styles/Dashboard.css";
+
+const Dashboard = () => {
+  const [nos, setNos] = useState();
+  const [category, setCategory] = useState();
+  const [cmp, setCmp] = useState();
+  const [total, setTotal] = useState();
+  const [searchTerm, setSearchTerm] = useState(""); // State to hold the search term
+  const [searchResults, setSearchResults] = useState([]); // State to hold search results
+
+  const stock_key = process.env.REACT_APP_API_KEY_Stock;
+
+  // Function to handle search term change and fetch results
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+    fetchSearchResults(e.target.value);
+  };
+
+  // Function to fetch search results
+  const fetchSearchResults = (term) => {
+    let searchURL = `https://financialmodelingprep.com/api/v3/search?query=${term}&exchange=BSE&apikey=${stock_key}`;
+    fetch(searchURL)
+      .then((response) => response.json())
+      .then((data) => setSearchResults(data))
+      .catch((error) => console.error("Error fetching search results: ", error));
+  };
+
+  // Function to handle selecting a search result
+  const handleSelect = (result) => {
+    // Assuming 'result' contains the data you want to set in state
+    // Update the state accordingly, e.g. setCategory(result.currency)
+    console.log("Selected result:", result);
+  };
+
+  return (
+    <>
+      <Navbar />
+      <div id="dash-main">
+        <div id="dash-right">
+          <h1 id="ys-h1">Your Stocks</h1>
+          <h6>Here are the stocks you are currently tracking</h6>
+          <div className="add-div">
+            <span>
+              <i className="fa-solid fa-magnifying-glass" id="icon-hover"></i>{" "}
+              <input
+                id="i1"
+                type="text"
+                placeholder="Select your Stock"
+                value={searchTerm}
+                onChange={handleSearch}
+              />
+              <ul className="dropdown">
+                {Array.isArray(searchResults) &&
+                  searchResults.map((result) => (
+                    <li key={result.symbol} onClick={() => handleSelect(result)}>
+                      {result.name}
+                    </li>
+                  ))}
+              </ul>
+            </span>
+
+            <span>
+              <i className="fa-solid fa-hashtag" id="icon-hover"></i>
+              <input
+                id="i2"
+                value={nos}
+                type="number"
+                placeholder="No. of Stocks"
+                onChange={(e) => {
+                  setNos(e.target.value);
+                }}
+              />
+            </span>
+
+            <span>
+              <i className="fa-solid fa-list" id="icon-hover"></i>
+              <input
+                id="i3"
+                value={category}
+                type="text"
+                placeholder="Category"
+                onChange={(e) => {
+                  setCategory(e.target.value.toUpperCase());
+                }}
+              />
+            </span>
+
+            <span>
+              <i className="fa-solid fa-indian-rupee-sign" id="icon-hover"></i>
+              <input
+                id="i4"
+                value={cmp}
+                type="number"
+                placeholder="Current Market Price"
+                onChange={(e) => {
+                  setCmp(e.target.value);
+                }}
+              />
+            </span>
+
+            <span>
+              <i className="fa-solid fa-money-bill" id="icon-hover"></i>
+              <input
+                id="i5"
+                value={total}
+                type="number"
+                placeholder="Total Invested"
+                onChange={(e) => {
+                  setTotal(e.target.value);
+                }}
+              />
+            </span>
+
+            <button id="addbtn">Add</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Dashboard;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React, { useState } from "react";
 // import Navbar from "../Navbar";
 // import "../Styles/Dashboard.css";
@@ -11,6 +160,9 @@
 //   // const stock_key= process.env.REACT_APP_API_KEY_Stock;
 // // API Hit is only 25 per day very less to even test and integrate, ignore this
 //   // let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=adani&apikey=${stock_key}`
+
+//  const stock_key= process.env.REACT_APP_API_KEY_Stock;
+//   let searchURL =`https://financialmodelingprep.com/api/v3/search-name?query=${search_term}&limit=10&exchange=NSE&apikey=${stock_key}`
 
 //   return (
 //     <>
@@ -193,122 +345,122 @@
 
 // export default Dashboard;
 
-import React, { useState, useEffect } from "react";
-import Navbar from "../Navbar";
-import stockData from "./stocks.json"; // Importing stock data directly
-import "../Styles/Dashboard.css";
+// // import React, { useState, useEffect } from "react";
+// // import Navbar from "../Navbar";
+// // import stockData from "./stocks.json"; // Importing stock data directly
+// // import "../Styles/Dashboard.css";
 
-const Dashboard = () => {
-  const [nos, setNos] = useState("");
-  const [category, setCategory] = useState("");
-  const [cmp, setCmp] = useState("");
-  const [total, setTotal] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedStock, setSelectedStock] = useState("");
-  const [matchingStocks, setMatchingStocks] = useState([]);
+// // const Dashboard = () => {
+// //   const [nos, setNos] = useState("");
+// //   const [category, setCategory] = useState("");
+// //   const [cmp, setCmp] = useState("");
+// //   const [total, setTotal] = useState("");
+// //   const [searchQuery, setSearchQuery] = useState("");
+// //   const [selectedStock, setSelectedStock] = useState("");
+// //   const [matchingStocks, setMatchingStocks] = useState([]);
 
-  useEffect(() => {
-    // Initially, show empty matching stocks
-    setMatchingStocks([]);
-  }, []);
+// //   useEffect(() => {
+// //     // Initially, show empty matching stocks
+// //     setMatchingStocks([]);
+// //   }, []);
 
-  const handleSearch = (query) => {
-    // Update searchQuery state
-    setSearchQuery(query);
+// //   const handleSearch = (query) => {
+// //     // Update searchQuery state
+// //     setSearchQuery(query);
 
-    // Filter stock data based on search query
-    const results = stockData.filter((stock) =>
-      stock["Company Name"].toLowerCase().includes(query.toLowerCase())
-    );
+// //     // Filter stock data based on search query
+// //     const results = stockData.filter((stock) =>
+// //       stock["Company Name"].toLowerCase().includes(query.toLowerCase())
+// //     );
 
-    // Set matching stocks state
-    setMatchingStocks(results.slice(0, 5)); // Limit to 5 results
-  };
+// //     // Set matching stocks state
+// //     setMatchingStocks(results.slice(0, 5)); // Limit to 5 results
+// //   };
 
-  const handleSelectStock = (stockName) => {
-    // Update selectedStock state and clear matching stocks
-    setSelectedStock(stockName);
-    setMatchingStocks([]);
-  };
+// //   const handleSelectStock = (stockName) => {
+// //     // Update selectedStock state and clear matching stocks
+// //     setSelectedStock(stockName);
+// //     setMatchingStocks([]);
+// //   };
 
-  return (
-    <>
-      <Navbar />
-      <div id="dash-main">
-        <div id="dash-right">
-          <h1 id="ys-h1">Your Stocks</h1>
-          <h6>Here are the stocks you are currently tracking</h6>
-          <div className="add-div">
-            <span>
-              <i className="fa-solid fa-magnifying-glass" id="icon-hover"></i>{" "}
-              <input
-                id="i1"
-                type="text"
-                placeholder="Select your Stock"
-                value={selectedStock || searchQuery} // Display selected stock or search query
-                onChange={(e) => handleSearch(e.target.value)}
-              />
-              {matchingStocks.length > 0 && (
-                <ul className="dropdown">
-                  {matchingStocks.map((stock) => (
-                    <li
-                      key={stock["ISIN Code"]}
-                      onClick={() => handleSelectStock(stock["Company Name"])}
-                    >
-                      {stock["Company Name"]}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </span>
-            <span>
-              <i className="fa-solid fa-hashtag" id="icon-hover"></i>
-              <input
-                id="i2"
-                type="number"
-                value={nos}
-                placeholder="No. of Stocks"
-                onChange={(e) => setNos(e.target.value)}
-              />
-            </span>
-            <span>
-              <i className="fa-solid fa-list" id="icon-hover"></i>
-              <input
-                id="i3"
-                type="text"
-                value={category}
-                placeholder="Category"
-                onChange={(e) => setCategory(e.target.value.toUpperCase())}
-              />
-            </span>
-            <span>
-              <i className="fa-solid fa-indian-rupee-sign" id="icon-hover"></i>
-              <input
-                id="i4"
-                type="number"
-                value={cmp}
-                placeholder="Current Market Price"
-                onChange={(e) => setCmp(e.target.value)}
-              />
-            </span>
-            <span>
-              <i className="fa-solid fa-money-bill" id="icon-hover"></i>
-              <input
-                id="i5"
-                type="number"
-                value={total}
-                placeholder="Total Invested"
-                onChange={(e) => setTotal(e.target.value)}
-              />
-            </span>
-            {/* <button id="addbtn" onClick={handleAdd}>
-              Add
-            </button> */}
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
+// //   return (
+// //     <>
+// //       <Navbar />
+// //       <div id="dash-main">
+// //         <div id="dash-right">
+// //           <h1 id="ys-h1">Your Stocks</h1>
+// //           <h6>Here are the stocks you are currently tracking</h6>
+// //           <div className="add-div">
+// //             <span>
+// //               <i className="fa-solid fa-magnifying-glass" id="icon-hover"></i>{" "}
+// //               <input
+// //                 id="i1"
+// //                 type="text"
+// //                 placeholder="Select your Stock"
+// //                 value={selectedStock || searchQuery} // Display selected stock or search query
+// //                 onChange={(e) => handleSearch(e.target.value)}
+// //               />
+// //               {matchingStocks.length > 0 && (
+// //                 <ul className="dropdown">
+// //                   {matchingStocks.map((stock) => (
+// //                     <li
+// //                       key={stock["ISIN Code"]}
+// //                       onClick={() => handleSelectStock(stock["Company Name"])}
+// //                     >
+// //                       {stock["Company Name"]}
+// //                     </li>
+// //                   ))}
+// //                 </ul>
+// //               )}
+// //             </span>
+// //             <span>
+// //               <i className="fa-solid fa-hashtag" id="icon-hover"></i>
+// //               <input
+// //                 id="i2"
+// //                 type="number"
+// //                 value={nos}
+// //                 placeholder="No. of Stocks"
+// //                 onChange={(e) => setNos(e.target.value)}
+// //               />
+// //             </span>
+// //             <span>
+// //               <i className="fa-solid fa-list" id="icon-hover"></i>
+// //               <input
+// //                 id="i3"
+// //                 type="text"
+// //                 value={category}
+// //                 placeholder="Category"
+// //                 onChange={(e) => setCategory(e.target.value.toUpperCase())}
+// //               />
+// //             </span>
+// //             <span>
+// //               <i className="fa-solid fa-indian-rupee-sign" id="icon-hover"></i>
+// //               <input
+// //                 id="i4"
+// //                 type="number"
+// //                 value={cmp}
+// //                 placeholder="Current Market Price"
+// //                 onChange={(e) => setCmp(e.target.value)}
+// //               />
+// //             </span>
+// //             <span>
+// //               <i className="fa-solid fa-money-bill" id="icon-hover"></i>
+// //               <input
+// //                 id="i5"
+// //                 type="number"
+// //                 value={total}
+// //                 placeholder="Total Invested"
+// //                 onChange={(e) => setTotal(e.target.value)}
+// //               />
+// //             </span>
+// //             {/* <button id="addbtn" onClick={handleAdd}>
+// //               Add
+// //             </button> */}
+// //           </div>
+// //         </div>
+// //       </div>
+// //     </>
+// //   );
+// // };
 
-export default Dashboard;
+// // export default Dashboard;

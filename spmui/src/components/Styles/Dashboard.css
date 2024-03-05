@@ -7,21 +7,21 @@
     margin: 0;
     padding: 0;
     z-index: 1;
-    width: 20rem; /* Set dropdown width to match input box */
+    width: 20rem;
+    max-height: 200px;
+    overflow-y: auto;
   }
   
   .dropdown li {
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Transition background and color */
+    transition: background-color 0.3s, color 0.3s;
   }
   
   .dropdown li:hover {
     background-color: #f0f0f0;
-    color: #000; /* Set text color to black on hover */
+    color: #000;
   }
-
-
 #dash-main{
     display: flex;
     align-items: center;
