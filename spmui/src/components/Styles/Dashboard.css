@@ -7,21 +7,29 @@
     margin: 0;
     padding: 0;
     z-index: 1;
-    width: 20rem;
+    width: calc(100% - 24px); /* Adjusted width */
     max-height: 200px;
     overflow-y: auto;
+    top: calc(100% + 10px); /* Adjusted top position */
   }
   
   .dropdown li {
     padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Added transition for color change */
+    color: #000; /* Set text color to black */
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0;
+    color: #000; /* Ensure text color remains black on hover */
   }
   
   .dropdown li:hover {
     background-color: #f0f0f0;
     color: #000;
   }
+
 #dash-main{
     display: flex;
     align-items: center;
